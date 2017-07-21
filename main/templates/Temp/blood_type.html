@@ -1,0 +1,161 @@
+
+                   
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/imagehover.min.css' %}" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="/">MEDICAL LIBRARY</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/search_checkup">CHECK-UP NOW</a></li>
+                    
+                    <li class="btn-trial"><a href="/">Profile Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br><br>
+<div class="container">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+ <div class="mail-box">
+                   <aside class="lg-side">
+                      <div class="inbox-head" style="border-top-left-radius:900px;border-top-right-radius: 900px" >
+                         <center><h3>Search Blood Donors</h3>
+                         <form class="form" method="POST" action="{% url 'main:blood_search' %}"><!--Not applied yet -->
+                        {% csrf_token %}       <br>                
+                        <input class="btn btn-compose" type="submit"  style="width: 100px" value="Search" >
+                        <br></center>
+                        <br>
+                        <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+            <div class="panel panel-default" style="color: #000">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Choose a Blood Group</div>
+            
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        O+
+                        <div class="material-switch pull-right">
+                            <input id="1" name="blood1" value="O+" type="checkbox"/>
+                            <label for="1" class="label-default"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        O-
+                        <div class="material-switch pull-right">
+                            <input id="2" name="blood2" value="O-" type="checkbox"/>
+                            <label for="2" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        A+
+                        <div class="material-switch pull-right">
+                            <input id="3" name="blood3" value="A+" type="checkbox"/>
+                            <label for="3" class="label-success"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        A-
+                        <div class="material-switch pull-right">
+                            <input id="4" name="blood4" value="A-" type="checkbox"/>
+                            <label for="4" class="label-info"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        B+
+                        <div class="material-switch pull-right">
+                            <input id="5" name="blood5" value="B+" type="checkbox"/>
+                            <label for="5" class="label-warning"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        B-
+                        <div class="material-switch pull-right">
+                            <input id="6" name="blood6" value="B-" type="checkbox"/>
+                            <label for="6" class="label-danger"></label>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        AB+
+                        <div class="material-switch pull-right">
+                            <input id="8" name="blood7" value="AB+" type="checkbox"/>
+                            <label for="8" class="label-default"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        AB-
+                        <div class="material-switch pull-right">
+                            <input id="7" name="blood7" value="AB-" type="checkbox"/>
+                            <label for="7" class="label-default"></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+</div>
+  <input type="hidden" name="location" id="location" value="{"ip" : "47.31.14.117", "country_code" : "IN", "country_name" : "India", "region_code" : "DL", "region_name" : "National Capital Territory of Delhi", "city" : "Delhi", "zip_code" : "", "time_zone" : "Asia/Kolkata", "latitude" : "28.6667", "longitude" : "77.2167", "metro_code" : "0", }"><br>
+
+                    </form>
+                    
+                              </div>
+                          </form>
+                      </div>
+                    
+                  </aside>
+              </div>
+</div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    //console.log("23");    
+   // alert("hey");
+    var l = "";
+    //console.log(l);
+    //alert("hey2");
+        $.getJSON("https://freegeoip.net/json/", function(result){
+            l = l + "{";            
+            $.each(result, function(i, field){
+            	l = l + "\"" + i + "\" : " + "\"" + field + "\", ";
+                        
+            });
+           // alert("hey"+l);
+            //alert("hey");
+            l = l + "}";
+            $('#location').val(l);
+            //alert("hey"+l);
+        });
+    
+});
+</script>
+

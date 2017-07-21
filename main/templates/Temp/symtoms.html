@@ -1,0 +1,92 @@
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/imagehover.min.css' %}" type="text/css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="/">HEALTH MEDLIB</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/search_checkup">CHECK-UP NOW</a></li>
+
+                    <li class="btn-trial"><a href="/">Profile Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <div class="container">
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+        <div class="mail-box">
+            <aside class="lg-side">
+                <div class="inbox-head">
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+                                <div class="panel panel-warning" style="color: #000">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">Type </div>
+
+
+                                    <ul class="list-group">
+                                        <form action="{% url 'main:quest' %}" method="post">
+                                            {% csrf_token %} {% for ch in list %}
+                                            <li class="list-group-item">
+                                                {{ ch.label }}
+                                            <div class="material-switch pull-right">
+                                        
+                                                    <input id="{{ ch.id }}" name="symptom{{ forloop.counter }}" value="{{ ch.id }}" type="checkbox" />
+                                                    <label for="{{ ch.id }}" class="label-primary"></label>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                            <input type="text" name="len" value="{{ len }}" hidden>
+                                            <br>
+                                            <input type="submit" class="abcbut" value="Submit" /><br>
+                                        </form>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </form>
+
+                </div>
+                </form>
+        </div>
+
+        </aside>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" asnyc></script>
+</body>
+
+</html>

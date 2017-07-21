@@ -1,0 +1,103 @@
+
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/imagehover.min.css' %}" type="text/css" />
+</head>
+
+<bod>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="/">HEALTH MEDLIB</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/search_checkup">CHECK-UP NOW</a></li>
+
+                    <li class="btn-trial"><a href="/">Profile Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <br>
+    <div class="container-fluid">
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+        <div class="mail-box">
+            <aside class="lg-side">
+                <div class="inbox-head">
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                                                      <div class="col-sm-12">
+                                <div class="panel panel-warning" style="color: #000">
+                                    <div class="panel-heading">Doctors Near You </div>
+   
+                        
+                           <div class="panel panel-default panel-table" style="max-height: 450px;overflow: auto">
+                <table class="table table-stripped table-bordered table-list">
+                  <thead>
+                    <tr>
+                        <th>#</th>
+                        <th style="max-width: 330px">DOCTOR'S NAME</th>
+                        <th style="max-width: 330px"> ADDRESS</th>
+                        <th>DIRECTIONS</th>
+                        <th>WEBSITE</th>
+                        <th style="max-width: 170px">MOBILE</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                     
+     {% for i in doc_list %}
+                          <tr>
+                            <td><img  width="30" height="30" src="{% static 'img/doc1.jpg' %}"></td>
+                            <td style="max-width: 330px"> {{ i.name }}</td>
+                            <td style="max-width: 330px">  {{ i.vicinity }} </td>
+                            <td>  <a href="{{ i.place_url }}" target="_blank">Location</a> </td>
+                            <td>   <a href="{{ i.website }}" target="_blank"> Website </a> </td>
+                             <td style="max-width: 170px">    {{ i.ph }}</td>
+                          </tr>
+                         
+                            {% endfor %}
+                        </tbody>
+                </table>
+            
+              </div>
+                         </div>
+<div id = "geolocat">
+</div>
+
+
+
+                      
+        </aside>
+    </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" asnyc></script>
+ </body>
+
+</html>
+       
+
+

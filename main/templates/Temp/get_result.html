@@ -1,0 +1,119 @@
+
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/imagehover.min.css' %}" type="text/css" />
+</head>
+
+<<<<<<< HEAD
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="/">HEALTH MEDLIB</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/search_checkup">CHECK-UP NOW</a></li>
+
+                    <li class="btn-trial"><a href="/">Profile Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <br>
+    <div class="container">
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+        <div class="mail-box">
+            <aside class="lg-side">
+                <div class="inbox-head">
+                    <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <img src="{% static 'img/doc.png' %}" style="max-height: 530px" alt="" />
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-warning" style="color: #000">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">Your Result </div>
+                                    <div style="padding: 20px;text-align: justify">
+                                       <b> Disease : </b>  {{ result.name }} <br>
+                   <b>Severity :</b> {{ result.severity }}<br>
+                  <b> Suggestion : </b>{{ result.probname }}
+                    {{ result.hint }}<br>
+                    <form class="form" method="POST" action="{% url 'main:doc_list' %}"><!--Not applied yet -->
+                        {% csrf_token %}
+                        
+                        <br>
+                        <input type="submit"  class="btn btn-primary" name="find_doctor" id="find_doctor" value="GET NEARBY DOCTORS"><br>
+                        <input type="hidden" name="location" id="location" value="{"ip" : "47.31.14.117", "country_code" : "IN", "country_name" : "India", "region_code" : "DL", "region_name" : "National Capital Territory of Delhi", "city" : "Delhi", "zip_code" : "", "time_zone" : "Asia/Kolkata", "latitude" : "28.6667", "longitude" : "77.2167", "metro_code" : "0", }"><br>
+                        <input type="hidden" name="doctor_type" id="doctor_type" value="{{ result.hint }}">               
+                    </form>
+
+
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </form>
+
+                </div>
+                </form>
+        </div>
+
+        </aside>
+    </div>
+    </div>
+      <div id = "geolocat">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    //console.log("23");    
+    //alert("hey");
+    var l = "";
+    //console.log(l);
+    //alert("hey2");
+        $.getJSON("https://freegeoip.net/json/", function(result){
+            l = l + "{";            
+            $.each(result, function(i, field){
+            	l = l + "\"" + i + "\" : " + "\"" + field + "\", ";
+                        
+            });
+            l = l + "}";
+            $('#location').val(l);
+            //alert("hey"+l);
+        });
+    });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" asnyc></script>>
+</body>
+
+</html>
+
+
+

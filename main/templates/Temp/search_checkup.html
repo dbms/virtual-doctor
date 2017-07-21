@@ -1,0 +1,132 @@
+
+                   
+<!DOCTYPE html> {% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,700,800' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link href='https://fonts.googleapis.com/css?family=Sonsie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/imagehover.min.css' %}" type="text/css" />
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="/">HEALTH MEDLIB</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/search_checkup">CHECK-UP NOW</a></li>
+                    
+                    <li class="btn-trial"><a href="/">Profile Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br><br>
+<div class="container">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+ <div class="mail-box">
+                   <aside class="lg-side">
+                      <div class="inbox-head" style="border-top-left-radius:900px;border-top-right-radius: 900px" >
+                         <center><h3>Search Your Problem Here </h3>
+                         <form class="form" method="POST" action="{% url 'main:search1' %}"><!--Not applied yet -->
+                        {% csrf_token %}                       
+                        <input class="abc" style="color: #000" name="topic_text"required>
+                       <input class="btn btn-compose" type="submit"  style="width: 100px" value="Search" >
+                        <br></center>
+                        <br>
+                        <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+            <div class="panel panel-default" style="color: #000">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Common Problems</div>
+            
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        HeadAche
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDefault" name="symptom1" value="headache" type="checkbox"/>
+                            <label for="someSwitchOptionDefault" class="label-default"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Fever
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionPrimary" name="symptom2" value="fever"  type="checkbox"/>
+                            <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Tiring easily,weekness
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionSuccess" name="symptom3" value="weakness" type="checkbox"/>
+                            <label for="someSwitchOptionSuccess" class="label-success"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Shortness of breath
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionInfo" name="symptom4" value="Shortness of breath" type="checkbox"/>
+                            <label for="someSwitchOptionInfo" class="label-info"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Nausea
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionWarning" name="symptom5" value="Nausea" type="checkbox"/>
+                            <label for="someSwitchOptionWarning" class="label-warning"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Weight Loss
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDanger" name="symptom6" value="Weight Loss" type="checkbox"/>
+                            <label for="someSwitchOptionDanger" class="label-danger"></label>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+                        Abdominal Pain
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDanger1" name="symptom7" value="Abdominal Pain" type="checkbox"/>
+                            <label for="someSwitchOptionDanger1" class="label-default"></label>
+                        </div>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+    </div>
+</div>
+
+                    </form>
+                    
+                              </div>
+                          </form>
+                      </div>
+                    
+                  </aside>
+              </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" asnyc></script>
+  
+</body>
+</html>
